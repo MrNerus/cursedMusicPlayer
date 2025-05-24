@@ -16,31 +16,33 @@
   padding: 1rem 2rem;
   border: none;
   border-radius: 0.5rem;
-  background-color: #00cc66;
-  color: whitesmoke;
+  background-color: radial-gradient(circle at center, #b0b0b0 0%, #7a7a7a 50%, #5a5a5a 100%);;
+  color: #0a0a0a;
   cursor: pointer;
   transition: background 0.2s;
   gap: 1rem;
 }
 
 #playBtn:hover {
-  background-color: #00aa55;
+  background-color: radial-gradient(circle at center, #909090 0%, #6a6a6a 50%, #4a4a4a 100%);
 }
   #draggable {
     position: absolute;
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    background: tomato;
+    background: radial-gradient(circle at center, #b0b0b0 0%, #7a7a7a 50%, #5a5a5a 100%);
     cursor: grab;
     user-select: none;
     transition: background 0.2s;
     z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   #draggable.dragging {
     cursor: grabbing;
-    background: orangered;
+    background: radial-gradient(circle at center, #909090 0%, #6a6a6a 50%, #4a4a4a 100%);
   }
 
   body {
@@ -50,7 +52,7 @@
     flex-direction: column;
     width: 100%;
     height: 100vh;
-    gap: 1rem;
+    gap: 5rem;
     background-color: black;
     color: whitesmoke;
   }
@@ -77,14 +79,34 @@
 
   .sliderTrackInner {
     position: absolute;
-    height: 100%;
+    height: 500%;
     width: 100%;
-    background-color: lightblue;
-    top: 0;
     left: 0;
     transition: background 0.2s;
-    border-radius: 2rem;
-  }
+    border-radius: 1rem;
+    background: linear-gradient(to bottom, #4a4a4a 0%, #2a2a2a 100%);
+    /* background-image: linear-gradient(to right, #00cc66 0%, #00cc66 50%, transparent 50%, transparent 100%); */
+    background-repeat: no-repeat;
+border: 2px solid #2a2a2a;
+  background: linear-gradient(
+    to bottom,
+    #4a4a4a 0%,
+    #3a3a3a 46%,
+    #2a2a2a 47%,
+    #1f1f1f 50%,
+    #2a2a2a 53%,
+    #3a3a3a 54%,
+    #4a4a4a 100%
+  );
+  box-shadow:
+    inset 0 2px 2px rgba(255, 255, 255, 1), /* top soft light */
+    inset 0 -2px 4px rgba(0, 0, 0, 1),       /* bottom groove */
+    inset 0 1px 0 rgba(255, 255, 255, 1),    /* top inner edge of cut */
+    inset 0 -1px 0 rgba(0, 0, 0, 1),         /* bottom inner edge of cut */
+    0 1px 1px rgba(0, 0, 0, 1);              /* external depth */
+}           /* outer depth */
+
+
 
   p {
     font-family: Arial, Helvetica, sans-serif;
